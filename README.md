@@ -4,7 +4,7 @@
 ## 内部動作フロー
 1. 「client_id」と「client_secret」からアクセストークンを取得する
   参考：[Twitch APIに必要なOAuth認証のアクセストークンを取得しよう](https://qiita.com/pasta04/items/2ff86692d20891b65905)
-1. 配信者チャンネルページのURLからuserIdを取得する
+1. 配信者チャンネルページのURLからuserIdを取得する(Twitch配信のURLの末尾pathを利用する)
   参考：[Twitch API Reference Get Users](https://dev.twitch.tv/docs/api/reference#get-users)
   ```json
   // 例：配信者のチャンネルURLが 「https://www.twitch.tv/twitchdev」 の場合、末尾の「twitchdev」を利用する
@@ -35,7 +35,6 @@
     "data": []
   }
   ```
-  (Twitch配信のURLの末尾pathを利用する)
 1. userIdから配信しているか取得する
   参考：[Twitch API Reference Get Streams](https://dev.twitch.tv/docs/api/reference#get-streams)
   ```json
